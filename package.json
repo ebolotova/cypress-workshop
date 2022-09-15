@@ -1,10 +1,14 @@
 {
-  "name": "package.json",
+  "name": "cypress-workshop",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "\"echo \\\"Error: no test specified\\\" && exit 1\""
+      "cypress-cli": "cypress open",
+      "cypress-headed": "cypress run -b chrome",
+      "cypress-headless": "cypress run --headless -b chrome",
+      "eslint": "eslint cypress",
+      "eslint-fix": "eslint cypress --fix"
   },
   "repository": {
     "type": "git",
@@ -12,7 +16,23 @@
   },
   "author": "",
   "license": "ISC",
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run eslint-fix"
+    }
+  },
   "devDependencies": {
-    "cypress": "^10.8.0"
+    "cypress": "^10.8.0",
+    "eslint": "^8.23.1",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-chai-friendly": "^0.7.2",
+    "eslint-plugin-cypress": "^2.12.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.8",
+    "husky": "^8.0.1",
+    "prettier": "^2.7.1"
   }
 }
