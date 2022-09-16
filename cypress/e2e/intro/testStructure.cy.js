@@ -24,19 +24,24 @@ describe('Context: My First Test', () => {
     expect(true).to.equal(true);
   });
 
+  it('ATest 6', () => {
+    expect(false).to.equal(false);
+  });
+
+  it('Test 3', () => {
+    expect(true).to.equal(true);
+  });
+
+  it('Test 4', () => {
+    expect(true).to.equal(true);
+  });
+
+  it('Test 5', () => {
+    expect(true).to.equal(true);
+  });
+
   it('Test 2', () => {
-    expect(true).to.equal(true);
+    expect(false).to.equal(false);
   });
 
-  xit('Test 3', () => {
-    expect(true).to.equal(true);
-  });
-
-  it.skip('Test 4', () => {
-    expect(true).to.equal(true);
-  });
-
-  it.only('Test 5', () => {
-    expect(true).to.equal(true);
-  });
 });
