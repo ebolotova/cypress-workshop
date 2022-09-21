@@ -16,10 +16,6 @@ describe('Checkboxes: Checkbox actions', () => {
         cy.get('[type="checkbox"]').then((checkbox) => {
           cy.wrap(checkbox).eq(3).check({ force: true }).should('be.checked');
           // Verify that correct text is displayed for chosen options
-          //cy.contains('.text-success', 'desktop');
-          //cy.contains('.text-success', 'notes');
-          //cy.contains('.text-success', 'commands');
-          //cy.contains('.text-success', 'documents');
           cy.contains('.text-success', 'downloads');
           cy.contains('.text-success', 'word');
           cy.contains('.text-success', 'excel');
