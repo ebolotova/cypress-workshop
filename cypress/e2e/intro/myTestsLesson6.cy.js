@@ -16,7 +16,7 @@ describe('Lists: Lists actions', () => {
           // Select each option and assert that it has correct option value and text
           cy.get('#cars')
             .select(text)
-            .should('have.value', option.val())
+            .should('have.value', option.valueOf())
             .contains(cars[index]);
         });
       });
