@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-      "cypress-cli": "cypress open",
-      "cypress-headed": "cypress run -b chrome",
-      "cypress-headless": "cypress run --headless -b chrome",
-      "eslint": "eslint cypress",
-      "eslint-fix": "eslint cypress --fix"
+    "cypress-cli": "cypress open",
+    "cypress-headed": "cypress run -b chrome",
+    "cypress-headless": "cypress run --headless -b chrome",
+    "eslint": "eslint cypress",
+    "eslint-fix": "eslint cypress --fix"
   },
   "repository": {
     "type": "git",
@@ -34,5 +34,8 @@
     "eslint-plugin-react": "^7.31.8",
     "husky": "^8.0.1",
     "prettier": "^2.7.1"
+  },
+  "dependencies": {
+    "cypress-file-upload": "^5.0.8"
   }
 }
