@@ -15,8 +15,11 @@ describe('Alerts: Alerts actions', () => {
         });
         //Select ok in alert
         cy.on('window:alert', () => true);
-        //Assert that alert closed
-        // stub should not be visible???
+        //Assert that alert closed  // stub should not be visible???
+        
         //cy.get('window:alert').close();
+        //cy.check('window:alert', stub).close();
+        //cy.check('window:alert').should('not.be.visible');
+        //cy.on('window:alert', stub).should('not.be.visible');
     });
 });
