@@ -69,19 +69,13 @@ describe('Tables: Tables actions', () => {
         });
     });
 
-    it('Check sorting in table', () => {
-        cy.get('.rt-tbody').find('rt-td').eq(0).should('contain', 'Alden')
-        //.rt-tr > . rt-resizable-header-content
-        cy.get('.rt-tr').find('rt-resizable-header-content').eq(0).click;
+    
+    it.only('Check sorting in table', () => {
+        cy.get('.rt-thead').find('.rt-resizable-header-content').eq(1).click;
+        //cy.get('.rt-resizable-header-content').eq(0).click;
 
-
-        // Assert that First Names are sorted out be DESC
-        cy.get('.rt-tbody').find('rt-td').eq(0).should('not.contain', 'Alden')
-            //.contains('.rt-tr-group', 'Kierra')
-
+        // Assert that First Names are sorted out be ASC
+        cy.get('.rt-tbody').find('.rt-td').eq(0).should('not.contain', 'Alden')
+        //TODO - need to compare all values in list - how??
     });
-
-
-
-
 });
