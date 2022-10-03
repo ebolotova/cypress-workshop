@@ -22,5 +22,9 @@
         "userEmail": "kierra@example.com",
         "salary": "2000",
         "department": "Legal"
+      },
+    "user4": {
+        "username": "repartner",
+        "password": "Test123456!"
       }
 }
