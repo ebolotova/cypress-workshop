@@ -10,6 +10,11 @@ export class NavigateTo {
     bookStoreFromProfile() {
         cy.get('#gotoStore').click();
     }
+
+    allBooks() {
+        cy.visit('/books');
+    }
+    
 }
 
 export const navigateTo = new NavigateTo();

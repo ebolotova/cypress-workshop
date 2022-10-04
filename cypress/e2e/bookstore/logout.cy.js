@@ -8,7 +8,7 @@ describe('Auth: Log out user', () => {
   beforeEach('Perform login', () => {
     navigateTo.login();
     cy.fixture('users').then((users) => {
-      auth.login(users.user2.username, users.user2.password);
+      auth.login(users.user4.username, users.user4.password);
     });
   });
 

@@ -19,7 +19,7 @@ describe('Lists: Lists actions', () => {
           .contains(colors[index]);
       });
     });
-  });
+  }) ;
 
   it('Check selection of single list option - click method - title menu', () => {
     // Click on dropdown
