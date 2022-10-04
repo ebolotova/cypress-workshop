@@ -4,20 +4,23 @@ import { auth } from '../../support/bookstore_page_objects/auth';
 import { navigateTo } from '../../support/bookstore_page_objects/navigation';
 
 describe('Auth: Log out user', () => {
-  // Perform login
-  beforeEach('Perform login', () => {
-    navigateTo.login();
-    cy.fixture('users').then((users) => {
-      auth.login(users.user4.username, users.user4.password);
+    // Perform login
+    beforeEach('Perform login', () => {
+        cy.createUser();
+        cy.generateToken();
     });
-  });
 
-  it('Check logging out user', () => {
-    // Assert that user is on profile page
-    cy.url().should('contain', '/profile');
-    // Perform log out
-    auth.logout();
-    // Assert that user is on login page
-    cy.url().should('contain', '/login');
-  });
+    // Delete user
+    afterEach('Delete user', () => {
+        cy.deleteUser();
+    });
+
+    it('Check logging out user', () => {
+        // Assert that user is on profile page
+        navigateTo.profile();
+        // Perform log out
+        auth.logout();
+        // Assert that user is on login page
+        cy.url().should('contain', Cypress.env('login'));
+    });
 });

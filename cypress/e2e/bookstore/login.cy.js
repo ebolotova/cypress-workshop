@@ -16,14 +16,14 @@ describe('Auth: Login user', () => {
             auth.login(users.user4.username, users.user4.password);
         });
         // Verify that user is redirected to profile page (user is logged in)
-        cy.url().should('contain', '/profile');
+        cy.url().should('contain', Cypress.env('profile')); // where is Cypress.env?? - in cypress.config.js?
     });
 
     it('Check invalid user credentials', () => {
         // Perform login
         auth.login('invalid345', 'invalid345');
         // Verify that user is still on login page (user is not logged in)
-        cy.url().should('contain', '/login');
+        cy.url().should('contain', Cypress.env('login')); // from where - cypress.config.js?
         // Verify that error message is displayed
         cy.get('#output').should('contain', 'Invalid username or password!');
     });
@@ -35,7 +35,7 @@ describe('Auth: Login user', () => {
             auth.login('invalid345', users.user4.password);
         });
         // Verify that user is still on login page (user is not logged in)
-        cy.url().should('contain', '/login');
+        cy.url().should('contain', Cypress.env('login'));
         // Verify that error message is displayed
         cy.get('#output').should('contain', 'Invalid username or password!');
     });
@@ -47,7 +47,7 @@ describe('Auth: Login user', () => {
             auth.login(users.user4.username, 'invalid345');
         });
         // Verify that user is still on login page (user is not logged in)
-        cy.url().should('contain', '/login');
+        cy.url().should('contain', Cypress.env('login'));
         // Verify that error message is displayed
         cy.get('#output').should('contain', 'Invalid username or password!');
     });

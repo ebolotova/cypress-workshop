@@ -23,9 +23,12 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+import 'cypress-file-upload'; // -- This gives possibiity to upload files via cypress
+import * as api from './api/auth';
+import * as utils from './utils';
 
-// -- This gives possibiity to upload files via cypress
-import 'cypress-file-upload';
+const username = `user${utils.randomFiveNumbers()}`;
+const password = 'Test123456!';
 
 Cypress.Commands.add('verifyWindowAlertText', (alertText) => {
     cy.once('window:alert', (str) => {
@@ -45,4 +48,16 @@ Cypress.Commands.add('textExists', (text) => {
     cy.wrap(text).each((index) => {
         cy.contains(index).should('exist');
     });
+});
+
+Cypress.Commands.add('createUser', () => {
+    api.createUser(username, password);
+});
+
+Cypress.Commands.add('generateToken', () => {
+    api.generateToken(username, password);
+});
+
+Cypress.Commands.add('deleteUser', () => {
+    api.deleteUser(username, password);
 });
