@@ -26,9 +26,14 @@
 import 'cypress-file-upload'; // -- This gives possibiity to upload files via cypress
 import * as api from './api/auth';
 import * as utils from './utils';
+import * as books from './api/books';
 
 const username = `user${utils.randomFiveNumbers()}`;
 const password = 'Test123456!';
+
+
+const userId = `user${utils.randomFiveNumbers()}`;
+const isbn = 'Test123456!';
 
 Cypress.Commands.add('verifyWindowAlertText', (alertText) => {
     cy.once('window:alert', (str) => {
@@ -60,4 +65,12 @@ Cypress.Commands.add('generateToken', () => {
 
 Cypress.Commands.add('deleteUser', () => {
     api.deleteUser(username, password);
+});
+
+Cypress.Commands.add('createBook', () => {
+    api.createBook(username, isbn);
+});
+
+Cypress.Commands.add('deleteBook', () => {
+    api.deleteBook(username, isbn);
 });

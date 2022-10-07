@@ -11,8 +11,12 @@ export class NavigateTo {
     //     cy.get('#gotoStore').click();
     // }
 
+    // allBooks() {
+    //     cy.visit('/books');
+    // }
+
     allBooks() {
-        cy.visit('/books');
+        cy.visit(Cypress.env('books'));
     }
 
     login() {

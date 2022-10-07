@@ -31,6 +31,7 @@ module.exports = defineConfig({
             apiLogin: "/Account/v1/Login",
             apiAuthorized: "/Account/v1/Authorized",
             apiUser: "/Account/v1/User",
+            apiBooks: "/BookStore/v1/Books",
             login: "/login",
             profile: "/profile",
             books: "/books"
@@ -47,6 +48,7 @@ module.exports = defineConfig({
             apiLogin: "/Account/v1/Login",
             apiAuthorized: "/Account/v1/Authorized",
             apiUser: "/Account/v1/User",
+            apiBooks: "/BookStore/v1/Books",
             login: "/login",
             profile: "/profile",
             books: "/books"
