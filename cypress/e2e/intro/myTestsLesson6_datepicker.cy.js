@@ -9,7 +9,7 @@ describe('Date picker: Date picker actions', () => {
   it('Check dynamic date selection', () => {
     // Increment Date by 1 month
     const date = new Date();
-    date.setMonth(date.getMonth() + 1);
+    //date.setMonth(date.getMonth() + 1);
     // Set date to 23rd day of next month
     const year = date.getFullYear();
     const month = date.getMonth();
@@ -30,17 +30,15 @@ describe('Date picker: Date picker actions', () => {
     );
   });
 
-
   it.only('Check dynamic date selection', () => {
     // Increment Date by 1 week from today
-    const date = new Date();
-    //date.setDay(date.getDay() + 7); // cannot understand why setDate is not function
     const year = date.getFullYear();
     const month = date.getMonth();
     cy.log(month);
-    //const day = 23;
-    const day = date.getDay();
-
+    const day = 23;
+    //date.setDay (date.getDay() + 7); // cannot understand why setDay is not function
+    //const day = date.getDay();
+   
     // Open date picker
     cy.get('#datePickerMonthYearInput').click();
     // Select year
@@ -49,8 +47,7 @@ describe('Date picker: Date picker actions', () => {
     cy.get('.react-datepicker__month-select').select(`${month}`);
     // Select day
     //TODO: do not understand why I cannot select 1 week ahead
-    //cy.get('.react-datepicker__day--today').select(`${day}`);
-    cy.get(`.react-datepicker__day--00${day}`).first().click();
+    cy.get(`.react-datepicker__day--0${day}`).first().click();
 
     // Assert input date value
     cy.get('#datePickerMonthYearInput')
