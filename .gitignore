@@ -1,5 +1,5 @@
 .DS_Store
-2node_modules/
-3.vscode
-4cypress/videos/
-5cypress/screenshots/
+node_modules/
+.vscode
+cypress/videos/
+cypress/screenshots/
