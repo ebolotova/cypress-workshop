@@ -1,5 +1,6 @@
 /// <reference types="Cypress" />
 
+import { qase } from 'cypress-qase-reporter/dist/mocha';
 import { bookActions } from '../../support/bookstore_page_objects/book_store';
 import { navigateTo } from '../../support/bookstore_page_objects/navigation';
 
@@ -8,21 +9,24 @@ describe('Collections: Check All Books Info', () => {
         navigateTo.allBooks();
     });
 
-    it('Check finding all books in store', () => {
-        cy.get('.rt-tbody')
-            .each((row) => {
-                cy.fixture('allBooks').then((book) => {
-                    const bookIDs = Object.keys(book);
-                    const bookData = Object.values(book);
-                    cy.wrap(bookIDs).each((id) => {
-                        bookActions.checkAllBookCollection(
-                            bookData[id].Title,
-                            bookData[id].Author,
-                            bookData[id].Publisher);
+    qase(
+        2,
+        it('Check finding all books in store', () => {
+            cy.get('.rt-tbody')
+                .each((row) => {
+                    cy.fixture('allBooks').then((book) => {
+                        const bookIDs = Object.keys(book);
+                        const bookData = Object.values(book);
+                        cy.wrap(bookIDs).each((id) => {
+                            bookActions.checkAllBookCollection(
+                                bookData[id].Title,
+                                bookData[id].Author,
+                                bookData[id].Publisher);
+                        });
                     });
                 });
-            });
-    });
+        })
+    );
 
     it.only('Check finding all books in store without separate method', () => {
         cy.get('.rt-tbody')
