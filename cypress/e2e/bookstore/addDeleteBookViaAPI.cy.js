@@ -13,7 +13,7 @@ describe('Collections: Add/Delete Book', () => {
     cy.deleteUser();
   });
 
-  it('Add book to Store', () => {
+  xit('Add book to Store', () => {
       // Navigate to book store
       navigateTo.bookStore();
       // Load books fixture
