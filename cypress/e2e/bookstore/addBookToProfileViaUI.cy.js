@@ -24,7 +24,7 @@ describe('Collections: Add Book To Collection', () => {
     });
   });
 
-  xit('Check adding book to profile collection', () => {
+  it('Check adding book to profile collection', () => {
     // Navigate to book store
     navigateTo.bookStoreFromProfile();
     // Load books fixture

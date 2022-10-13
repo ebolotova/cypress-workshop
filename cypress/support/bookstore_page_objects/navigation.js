@@ -7,9 +7,9 @@ export class NavigateTo {
     //     cy.visit('/profile');
     // }
 
-    // bookStoreFromProfile() {
-    //     cy.get('#gotoStore').click();
-    // }
+    bookStoreFromProfile() {
+        cy.get('#gotoStore').click();
+    }
 
     // allBooks() {
     //     cy.visit('/books');

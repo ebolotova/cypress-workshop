@@ -28,7 +28,7 @@ describe('Collections: Check All Books Info', () => {
         })
     );
 
-    it.only('Check finding all books in store without separate method', () => {
+    it('Check finding all books in store without separate method', () => {
         cy.get('.rt-tbody')
             .each((row) => {
                 cy.fixture('allBooks').then((book) => {
